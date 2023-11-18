@@ -1,1 +1,3 @@
-# simple-pc-part-picker rahim
+# simple-pc-part-picker
+
+Rahim and Obed
