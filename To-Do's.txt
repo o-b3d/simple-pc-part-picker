@@ -1,0 +1,18 @@
+1. Define the data structure for computer parts. This can be an array of objects,
+where each object represents a computer part with properties like 
+name, type (CPU, GPU, RAM, etc.), price, and other relevant details.
+
+2. Create a state variable in App component to hold the selected parts. This could
+be an object where the keys are part types and the values are the selected parts.
+
+3. Create a component to display a list of parts. This component should accept
+list of parts and the selected parts as props, and it should render a list item
+for each part. Each list item should include a button to select that part.
+
+4. When the select button is clicked, update the selected parts state in the App component.
+
+5. Create a component to display the selected parts. This component should accept the
+selected parts as a prop and render a list item for each selected part.
+
+6. In the App component's render method, render the list of parts and the selected
+parts components.
