@@ -14,11 +14,25 @@ export async function loader() {
 }
 
 export const Users = () => {
-  <ul>
-    {Users.map((user) => (
-      <li key={user.id}>
-        <Link to={`/user/${user.id}`}></Link>
-      </li>
-    ))}
-  </ul>;
+  const user = userLoaderData();
+  return (
+    <ul>
+      {user.map((user) => (
+        <li
+          key={user.id}
+          style={{
+            display: "flex",
+            gap: "1rem",
+            width: "50%",
+            alignItems: "center",
+          }}
+        >
+          <Link to={`/user/${user.id}`}></Link>
+          <span>
+            {user.first_name} {user.last_name}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
 };
