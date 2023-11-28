@@ -17,9 +17,9 @@ export default App;
 
 function Home() {
   return (
-    <div className="bg-base-100">
+    <div className="overflow-x-auto bg-base-100">
       {/*In a Table, need to add a tbody, or similar, tag as parents to tr tags -OG*/}
-      <table>
+      <table className="table">
         <tbody>
           <tr>
             <td>
