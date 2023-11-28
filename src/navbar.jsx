@@ -9,8 +9,10 @@ function Navbar() {
         </li>
         <li>
           <Link to="/about">About</Link>
-          </li>
-        <li>Contact Us</li>
+        </li>
+        <li>
+          <Link to="/contact">Contact Us</Link>
+        </li>
       </ul>
     </nav>
   );
