@@ -9,7 +9,7 @@ import Navbar from "./navbar.jsx";
 import CPU from "./pages/cpu.jsx";
 import PSU from "./pages/psu.jsx";
 import Motherboard from "./pages/motherboard.jsx";
-import GPU from "./pages/GPU.jsx";
+import GPU from "./pages/gpu.jsx";
 import ContactUs from "./pages/contact.jsx";
 
 const router = createBrowserRouter([
