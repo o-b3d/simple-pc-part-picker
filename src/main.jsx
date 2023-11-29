@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./App.css"
+import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Users, loader as usersLoader } from "./pages/Users.jsx";
-import { About } from "./pages/About.jsx";
+import About from "./pages/About.jsx";
 import Navbar from "./navbar.jsx";
 import CPU from "./pages/cpu.jsx";
 import PSU from "./pages/psu.jsx";
