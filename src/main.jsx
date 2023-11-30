@@ -1,19 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Users, loader as usersLoader } from "./pages/Users.jsx";
 import { About } from "./pages/about.jsx";
 import Navbar from "./navbar.jsx";
 import CPU from "./pages/cpu.jsx";
-
+import PSU from "./pages/psu.jsx";
+import Motherboard from "./pages/motherboard.jsx";
+import GPU from "./pages/gpu.jsx";
+import ContactUs from "./pages/contact.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/*",
     element:
       ({
-        /*I used a parent tag, or <> to add the Navbar to all routes -OG*/
+        /*I used a parent tag, or <> to add the Navbar to each path. There's probably a better to do it though -OG*/
       },
       (
         <>
@@ -21,6 +25,24 @@ const router = createBrowserRouter([
           <App />
         </>
       )),
+  },
+  {
+    path: "/about",
+    element: (
+      <>
+        <Navbar />
+        <About />
+      </>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <>
+        <Navbar />
+        <ContactUs />
+      </>
+    ),
   },
   {
     path: "/cpu",
@@ -32,11 +54,29 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/about",
+    path: "/motherboard",
     element: (
       <>
         <Navbar />
-        <About />
+        <Motherboard />
+      </>
+    ),
+  },
+  {
+    path: "/psu",
+    element: (
+      <>
+        <Navbar />
+        <PSU />
+      </>
+    ),
+  },
+  {
+    path: "/gpu",
+    element: (
+      <>
+        <Navbar />
+        <GPU />
       </>
     ),
   },
