@@ -31,7 +31,7 @@ function Home() {
           </tr>
           <tr>
             <td>
-              <PCPart partType={"Motherboard"} />
+              <PCPart partType={"RAM"} />
             </td>
           </tr>
           <tr>
