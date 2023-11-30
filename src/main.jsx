@@ -8,7 +8,7 @@ import { About } from "./pages/about.jsx";
 import Navbar from "./navbar.jsx";
 import CPU from "./pages/cpu.jsx";
 import PSU from "./pages/psu.jsx";
-import Motherboard from "./pages/motherboard.jsx";
+import Ram from "./pages/ram.jsx";
 import GPU from "./pages/gpu.jsx";
 import ContactUs from "./pages/contact.jsx";
 
@@ -54,11 +54,11 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/motherboard",
+    path: "/ram",
     element: (
       <>
         <Navbar />
-        <Motherboard />
+        <Ram />
       </>
     ),
   },
