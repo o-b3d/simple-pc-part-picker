@@ -1,4 +1,6 @@
-import '../App.css';
+import { Link } from "react-router-dom";
+import "../App.css";
+import { useEffect } from "react";
 
 export default function ContactUs() {
   return (
@@ -14,4 +16,20 @@ export function ContactUsPage() {
 
 {
   /* Use <a href="mailto:obed@ogtesting.com">Contact Us</a> for button */
+}
+
+//--> THE BELOW IS JUST FOR TESTING API FETCH!
+
+const url = "https://api.publicapis.org/entries";
+
+
+
+export async function testEntries() {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
