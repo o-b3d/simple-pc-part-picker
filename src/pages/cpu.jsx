@@ -7,7 +7,7 @@ export default function CPU(){
 }
 const cpuModels = [
   {
-    partnumber: "BX8071513900KS",
+    partNumber: "BX8071513900KS",
     brand: "Intel",
     model: "Core i9-13900KS",
   },
