@@ -199,27 +199,49 @@ export function AddGPU() {
   ];
 
   return (
-    <div className="">
-      {gpuModels.map((gpu, index) => (
-        <div className="" key={index}>
-          <img
-            src={gpu.Image}
-            alt={"Graphics Card"}
-            style={{ width: "320px", height: "auto", objectFit: "cover" }}
-          />
-          <h2 className="">{gpu.Model}</h2>
-          <p>{gpu.PartNumber}</p>
-          <p>{gpu.Brand}</p>
-          <div className="">
-            <button
-              className="btn btn-primary"
-              onClick={() => addGPUToBuild(gpu)}
-            >
-              Add to Build
-            </button>
-          </div>
-        </div>
-      ))}
+    <div className="overflow-x-auto">
+      <table className="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Part No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {gpuModels.map((gpu, index) => (
+            <tr key={index}>
+              <td>
+                <div className="flex items-center gap-3">
+                  <div className="mask w-12 h-12">
+                    <img src={gpu.Image} alt={"Graphics Card"} />
+                  </div>
+                </div>
+              </td>
+              <td>{gpu.Model}</td>
+              <td className="font-bold">{gpu.Brand}</td>
+              <td>{gpu.PartNumber}</td>
+              <td>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => addGPUToBuild(gpu)}
+                >
+                  Add to Build
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Part No.</th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   );
 }
@@ -228,3 +250,22 @@ const addGPUToBuild = (gpu) => {
   console.log(gpu);
   alert(`Added ${gpu.Model} to Build!`);
 };
+
+{
+  /* Original Code to Map through gpu array: 
+    {gpuModels.map((gpu, index) => (
+        <div className="" key={index}>
+          <img src={gpu.Image} alt={"Graphics Card"} />
+          <h2 className="">{gpu.Model}</h2>
+          <p>{gpu.PartNumber}</p>
+          <p>{gpu.Brand}</p>
+          <div className="">
+            <button
+              onClick={() => addGPUToBuild(gpu)}
+            >
+              Add to Build
+            </button>
+          </div>
+        </div>
+      ))} */
+}
