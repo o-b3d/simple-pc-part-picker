@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Users, loader as usersLoader } from "./pages/Users.jsx";
 import { About } from "./pages/about.jsx";
 import Navbar from "./navbar.jsx";
 import CPU from "./pages/cpu.jsx";
@@ -79,11 +78,6 @@ const router = createBrowserRouter([
         <GPU />
       </>
     ),
-  },
-  {
-    path: "Users",
-    element: <Users />,
-    loader: usersLoader,
   },
 ]);
 

@@ -33,3 +33,18 @@ export async function testEntries() {
     console.error('Error:', error);
   }
 }
+
+{/* export default function ContactUs() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setData(json);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+ */}
