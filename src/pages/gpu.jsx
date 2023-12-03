@@ -247,8 +247,8 @@ export function AddGPU() {
 }
 
 const addGPUToBuild = (gpu) => {
-  console.log(gpu);
   alert(`Added ${gpu.Model} to Build!`);
+  props.onGPUAdded(gpu);
 };
 
 {

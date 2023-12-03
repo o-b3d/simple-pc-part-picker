@@ -53,8 +53,6 @@ function Home() {
 function PCPart({ partType, partName, partPrice }) {
   return (
     <div>
-      {/* The below Link to only be used for the partType prop took me FOREVER to figure out,
-       only potential downside being the partType having to match the .jsx file name for the route to work -OG*/}
       <Link to={`/${partType}`}>{partType}</Link>
       <p>
         <strong>{partName}</strong>
@@ -63,3 +61,5 @@ function PCPart({ partType, partName, partPrice }) {
     </div>
   );
 }
+
+const handleGPUAdded = (gpu) => {};
