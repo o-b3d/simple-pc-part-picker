@@ -3,86 +3,39 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { About } from "./pages/about.jsx";
-import Navbar from "./navbar.jsx";
-import CPU from "./pages/cpu.jsx";
-import PSU from "./pages/psu.jsx";
-import Ram from "./pages/ram.jsx";
-import GPU from "./pages/gpu.jsx";
+import About from "./pages/about.jsx";
+import { partLoader, PartsPage } from "./pages/PartsPage.jsx";
 import ContactUs from "./pages/contact.jsx";
+import Home from "./pages/home.jsx";
 
 const router = createBrowserRouter([
-  {
-    path: "/*",
-    element:
-      ({
-        /*I used a parent tag, or <> to add the Navbar to each path. There's probably a better to do it though -OG*/
-      },
-      (
-        <>
-          <Navbar />
-          <App />
-        </>
-      )),
-  },
-  {
-    path: "/about",
-    element: (
-      <>
-        <Navbar />
-        <About />
-      </>
-    ),
-  },
-  {
-    path: "/contact",
-    element: (
-      <>
-        <Navbar />
-        <ContactUs />
-      </>
-    ),
-  },
-  {
-    path: "/cpu",
-    element: (
-      <>
-        <Navbar />
-        <CPU />
-      </>
-    ),
-  },
-  {
-    path: "/ram",
-    element: (
-      <>
-        <Navbar />
-        <Ram />
-      </>
-    ),
-  },
-  {
-    path: "/psu",
-    element: (
-      <>
-        <Navbar />
-        <PSU />
-      </>
-    ),
-  },
-  {
-    path: "/gpu",
-    element: (
-      <>
-        <Navbar />
-        <GPU />
-      </>
-    ),
-  },
+	{
+		path: "/",
+		element: <App />,
+		children: [
+			{
+				path: "/",
+				element: <Home />,
+			},
+			{
+				path: "part/:part",
+				element: <PartsPage />,
+				loader: partLoader
+			},
+			{
+				path: "/about",
+				element: <About />,
+			},
+			{
+				path: "/contact",
+				element: <ContactUs />,
+			},
+		],
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+	<React.StrictMode>
+		<RouterProvider router={router} />
+	</React.StrictMode>
 );
