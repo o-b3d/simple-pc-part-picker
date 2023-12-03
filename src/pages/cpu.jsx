@@ -6,7 +6,7 @@ export default function CPU() {
   );
 }
 
- HEAD
+ 
 export function AddCPU() {
   const addCPUToBuild = () => {
     // Logic to add CPU to build. Need to create array of CPU models or maybe use an API of CPU's?
