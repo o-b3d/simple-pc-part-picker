@@ -49,9 +49,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  /* Need to figure out */
   {
-    path: "auth",
-    element: withAuthProvider(Private, true),
+    path: "/auth",
+    element: withAuthProvider(Private, true)
   },
 ]);
 
