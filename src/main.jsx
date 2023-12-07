@@ -10,11 +10,12 @@ import Home from "./pages/home.jsx";
 import { AuthProvider } from "./utils/context/auth-context.jsx";
 import RequireAuth from "./utils/require-auth.jsx";
 import Private from "./private.jsx";
+import { Login } from "./pages/login.jsx";
 
 const withAuthProvider = (Component, requireAuth = false) => {
   return (
     <AuthProvider>
-      {!requireAuth ? (
+      {requireAuth ? (
         <RequireAuth>
           <Component />
         </RequireAuth>
@@ -49,10 +50,13 @@ const router = createBrowserRouter([
       },
     ],
   },
-  /* Need to figure out */
   {
-    path: "/auth",
-    element: withAuthProvider(Private, true)
+    path: "/login",
+    element: <Login />
+    },
+  {
+    path: "/private",
+    element: withAuthProvider(Private, true),
   },
 ]);
 

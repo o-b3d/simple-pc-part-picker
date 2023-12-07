@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SignOutUser } from "../utils/firebase";
 
 export function Navbar() {
   return (
@@ -29,9 +30,10 @@ export function Navbar() {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link className="link link-neutral" to="/">
+            <Link className="link link-neutral" to="/Login">
               Log in
             </Link>
+            <button onClick={SignOutUser}>Sign Out</button>
           </li>
         </ul>
       </div>
