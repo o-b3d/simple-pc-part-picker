@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+
+
 export function PartSelector({ selector, part }) {
 	return (
 		<Link to={`part/${selector.link}`}>

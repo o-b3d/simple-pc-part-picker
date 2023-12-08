@@ -4,13 +4,14 @@ import App from "./App.jsx";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/about.jsx";
-import { partLoader, PartsPage } from "./pages/PartsPage.jsx";
+import { partLoader, PartsPage } from "./pages/partselectorpage.jsx";
 import ContactUs from "./pages/contact.jsx";
 import Home from "./pages/home.jsx";
 import { AuthProvider } from "./utils/context/auth-context.jsx";
 import RequireAuth from "./utils/require-auth.jsx";
 import Private from "./private.jsx";
 import { Login } from "./pages/login.jsx";
+import PCBuilder from "./pages/pcbuild.jsx";
 
 const withAuthProvider = (Component, requireAuth = false) => {
   return (
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/pcbuild",
+        element: <PCBuilder />,
+      },
+      {
         path: "part/:part",
         element: <PartsPage />,
         loader: partLoader,
@@ -48,15 +53,15 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactUs />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/private",
+        element: withAuthProvider(Private, true),
+      },
     ],
-  },
-  {
-    path: "/login",
-    element: <Login />
-    },
-  {
-    path: "/private",
-    element: withAuthProvider(Private, true),
   },
 ]);
 
