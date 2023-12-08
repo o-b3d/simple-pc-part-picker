@@ -20,7 +20,10 @@ export function Navbar() {
     <div className="navbar bg-base-100">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" to="/">
-          Home
+          <div className="w-10">
+          <img src="/src/public/PartPickerLogo.png" alt="Website Logo" />
+          </div>
+          Simple PC Part Picker
         </Link>
       </div>
       <div className="flex-none">
