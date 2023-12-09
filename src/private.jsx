@@ -1,15 +1,7 @@
-import { Outlet } from "react-router-dom";
-import "./App.css";
-import { Navbar } from "./components/navbar";
+import './App.css'
 
 function Private() {
-  return (
-    <>
-      <Navbar />
-      <Outlet />
-      You logged in!
-    </>
-  );
+    return <div>You logged in!</div>
 }
 
-export default Private;
+export default Private

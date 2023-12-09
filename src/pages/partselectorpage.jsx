@@ -1,26 +1,19 @@
-import { useLoaderData } from "react-router-dom";
-import { PartList } from "../components/PartList";
-import { cpuModels, gpuModels } from "../utils/data";
-import { addPartToBuild } from "../utils/helpers";
-
-export const partLoader = async ({params}) => {
-	console.log("partLoader", params.part);
-	switch (params.part) {
-		case "gpu":
-			return gpuModels;
-		case "cpu":
-			return cpuModels;
-		default:
-			return null;
-	}
-};
+import { useLoaderData, useParams } from 'react-router-dom'
+import { PartList } from '../components/PartList'
+import { addPartToBuild } from '../utils/helpers'
+import { useContext } from 'react'
+import { AuthContext } from '../utils/context/auth-context'
 
 export function PartsPage() {
-	const parts = useLoaderData();
-	console.log("PartsPage", parts);
-	return (
-		<>
-			<PartList parts={parts} action={addPartToBuild} />
-		</>
-	);
+    //The below varible gets the user's data (e.g. email, name)
+    const { currentUser } = useContext(AuthContext)
+
+    const { partType } = useParams()
+    const parts = useLoaderData(partType)
+    console.log('PartsPage', parts)
+    return (
+        <>
+            <PartList parts={parts} action={addPartToBuild} />
+        </>
+    )
 }

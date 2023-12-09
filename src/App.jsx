@@ -1,16 +1,16 @@
-import { Outlet } from "react-router-dom";
-import "./App.css";
-import { Navbar } from "./components/navbar";
-import { Footer } from "./components/footer";
+import { Outlet } from 'react-router-dom'
+import './App.css'
+import { Navbar } from './components/navbar'
+import { Footer } from './components/footer'
 
 export default function App() {
-	return (
-		<>
-			<Navbar />
-			<Outlet />
-			<Footer />
-		</>
-	);
+    return (
+        <>
+            <Navbar />
+            <Outlet />
+            <Footer />
+        </>
+    )
 }
 
 // const handleGPUAdded = (gpu) => {};

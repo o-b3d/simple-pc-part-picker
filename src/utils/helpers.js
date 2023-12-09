@@ -1,3 +1,3 @@
 export const addPartToBuild = (part) => {
-	alert(`Added ${part.model} to Build!`);
-};
+    alert(`Added ${part.model} to Build!`)
+}
