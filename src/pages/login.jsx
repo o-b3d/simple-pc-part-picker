@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { signInUser } from '../utils/firebase'
+import { Navbar } from '../components/navbar'
 
 export function Login() {
     const [formFields, setFormFields] = useState({
@@ -34,26 +35,7 @@ export function Login() {
 
     return (
         <>
-            {/* <div>
-        <div>Login Test</div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            className="input-primary"
-          />
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-          <button>Submit</button>
-        </form>
-      </div> */}
-
+            <Navbar />
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

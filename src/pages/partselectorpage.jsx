@@ -10,10 +10,9 @@ export function PartsPage() {
 
     const { partType } = useParams()
     const parts = useLoaderData(partType)
-    console.log('PartsPage', parts)
     return (
         <>
-            <PartList parts={parts} action={addPartToBuild} />
+            <PartList parts={parts}/>
         </>
     )
 }

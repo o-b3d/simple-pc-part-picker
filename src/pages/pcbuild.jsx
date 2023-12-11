@@ -1,7 +1,8 @@
 import { PartSelector } from '../components/PartSelector'
-import { partSelectors } from '../utils/data'
+import { partSelectors } from '../utils/partSelectors'
 
 const PCBuilder = () => {
+    
     return (
         <div className="overflow-x-auto bg-base-100">
             <ul className="flex flex-col">

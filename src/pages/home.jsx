@@ -12,7 +12,7 @@ export default function Home() {
         <div
             className="hero min-h-[74.8vh]"
             style={{
-                backgroundImage: `url(${isDarkMode ? HeroDarkPage : HeroLightPage})`,
+                backgroundImage: `url(${HeroLightPage})`,
             }}
         >
             <div className="hero-overlay bg-opacity-60"></div>

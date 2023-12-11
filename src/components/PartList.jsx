@@ -1,4 +1,10 @@
+import { PickedPartContext } from './PickedPartContext'
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 export function PartList({ parts, action }) {
+    const navigate = useNavigate()
+    const { setSelectedPart } = useContext(PickedPartContext)
     return (
         <div className="overflow-x-auto">
             <table className="table">
@@ -16,7 +22,7 @@ export function PartList({ parts, action }) {
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="mask w-12 h-12">
-                                        <img src={part.image} alt={'Graphics Card'} />
+                                        <img src={part.image} alt={'PC Part'} />
                                     </div>
                                 </div>
                             </td>
@@ -24,7 +30,13 @@ export function PartList({ parts, action }) {
                             <td className="font-bold">{part.brand}</td>
                             <td>{part.partNumber}</td>
                             <td>
-                                <button className="btn btn-ghost" onClick={() => action(part)}>
+                                <button
+                                    className="btn btn-ghost"
+                                    onClick={() => {
+                                        setSelectedPart(part)
+                                        navigate('/PCBuild')
+                                    }}
+                                >
                                     Add to Build
                                 </button>
                             </td>

@@ -1,7 +1,6 @@
-import { cpuModels, gpuModels, newCpuModels } from '../utils/data'
+import { gpuModels, newCpuModels } from '../utils/data'
 
 export const partLoader = async ({ params }) => {
-    console.log('partLoader', params.part)
     switch (params.part) {
         case 'gpu':
             return gpuModels
