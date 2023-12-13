@@ -9,9 +9,9 @@ import { createBuild } from '../utils/helpers'
 export default function Home() {
     const navigate = useNavigate()
 
-    const handleButtonClick = (userID) => {
-        createBuild(uid(16), userID)
-        navigate('/pcbuild')
+    const handleButtonClick = async (userID) => {
+        const buildId = await createBuild(uid(16), userID)
+        navigate(`/pcbuild/:${buildId}`)
     }
 
     const [userID, setUserID] = useState()

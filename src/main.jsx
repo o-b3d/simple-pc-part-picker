@@ -13,6 +13,7 @@ import RequireAuth from './utils/require-auth.jsx'
 import Private from './private.jsx'
 import { Login } from './pages/login.jsx'
 import PCBuilder from './pages/pcbuild.jsx'
+import { buildLoader } from './utils/helpers.js'
 
 const withAuthProvider = (Component, requireAuth = false) => {
     return (
@@ -38,8 +39,9 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: '/pcbuild',
+                path: '/pcbuild:buildId',
                 element: <PCBuilder />,
+                loader: buildLoader
             },
             {
                 path: '/pcbuild/part/:part',
