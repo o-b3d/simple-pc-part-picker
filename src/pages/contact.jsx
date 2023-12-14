@@ -1,50 +1,69 @@
-import { Link } from "react-router-dom";
-import "../App.css";
-import { useEffect } from "react";
-
 export default function ContactUs() {
-  return (
-    <>
-      <ContactUsPage />
-    </>
-  );
+    return (
+        <div class="flex items-center justify-center p-12">
+            <div class="mx-auto w-full max-w-[550px]">
+                <form action="" method="POST">
+                    <div class="mb-5">
+                        <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                            Full Name
+                        </label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Full Name"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
+                    <div class="mb-5">
+                        <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="email@domain.com"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
+                    <div class="mb-5">
+                        <label
+                            for="subject"
+                            class="mb-3 block text-base font-medium text-[#07074D]"
+                        >
+                            Subject
+                        </label>
+                        <input
+                            type="text"
+                            name="subject"
+                            id="subject"
+                            placeholder="Enter your subject"
+                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        />
+                    </div>
+                    <div class="mb-5">
+                        <label
+                            for="message"
+                            class="mb-3 block text-base font-medium text-[#07074D]"
+                        >
+                            Message
+                        </label>
+                        <textarea
+                            rows="4"
+                            name="message"
+                            id="message"
+                            placeholder="Type your message"
+                            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                        ></textarea>
+                    </div>
+                    <div>
+                        <button class="rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
 }
-
-export function ContactUsPage() {
-  return <div className="contactPageContainer">Contact Us Page</div>;
-}
-
-{
-  /* Use <a href="mailto:obed@ogtesting.com">Contact Us</a> for button */
-}
-
-//--> THE BELOW IS JUST FOR TESTING API FETCH!
-
-const url = "https://api.publicapis.org/entries";
-
-
-
-export async function testEntries() {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-
-{/* export default function ContactUs() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        setData(json);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
- */}
