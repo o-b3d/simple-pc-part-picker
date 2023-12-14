@@ -5,6 +5,4 @@ export const partSelectors = [
     { label: 'GPU', link: 'gpu' },
     { label: 'RAM', link: 'ram' },
     { label: 'Case', link: 'case' },
-    { label: 'CPU Cooler', link: 'cooler' },
-    { label: 'Fans', link: 'fans' },
 ]

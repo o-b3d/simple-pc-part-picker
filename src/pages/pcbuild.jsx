@@ -11,16 +11,16 @@ const PCBuilder = () => {
     // const [builds, setBuilds] = useState();
 
     useEffect(() => {
-    //     const buildReference = collection(db, 'user_builds')
-    //     const getData = async () => {
-    //         const data = await getDocs(buildReference)
-    //         const builds = data.docs.map((doc) => ({
-    //             id: doc.id,
-    //             ...doc.data(),
-    //         }))
-    //         setBuilds(builds)
-    //     }
-    //     getData()
+        const buildReference = collection(db, 'user_builds')
+        const getData = async () => {
+            const data = await getDocs(buildReference)
+            const builds = data.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+            setBuilds(builds)
+        }
+        getData()
     console.log(build)
     }, [])
 
