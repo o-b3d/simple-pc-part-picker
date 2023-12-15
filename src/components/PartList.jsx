@@ -10,8 +10,8 @@ export function PartList({ action, partType }) {
                     <tr>
                         <th></th>
                         <th>Model</th>
-                        <th>Brand</th>
-                        <th>Part No.</th>
+                        <th>Color</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,13 +20,13 @@ export function PartList({ action, partType }) {
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="mask w-12 h-12">
-                                        <img src={part.image} alt={'PC Part'} />
+                                        {/* <img src={part.image} alt={'PC Part Image'} /> */}
                                     </div>
                                 </div>
                             </td>
                             <td>{part.name}</td>
-                            <td className="font-bold">{part.brand}</td>
-                            <td>{part.partNumber}</td>
+                            <td className="font-bold">{part.color}</td>
+                            <td>${part.price}</td>
                             <td>
                                 <button
                                     className="btn btn-ghost"
@@ -42,8 +42,8 @@ export function PartList({ action, partType }) {
                     <tr>
                         <th></th>
                         <th>Model</th>
-                        <th>Brand</th>
-                        <th>Part No.</th>
+                        <th>Color</th>
+                        <th>Price</th>
                     </tr>
                 </tfoot>
             </table>
