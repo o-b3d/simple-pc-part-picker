@@ -1,17 +1,15 @@
-import { useContext } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { PickedPartContext } from '../components/PickedPartContext'
 
-export function PartSelector({ selector, part }) {
-    const { selectedPart } = useContext(PickedPartContext)
+export function PartSelector({ data }) {
+    
     return (
-        <Link to={`part/${selector.link}`}>
-            <span>{selector.label}</span>
+        <Link to={`part/${data.type}`}>
+            <span>{data.label}</span>
             <p>
-                {/*I replcaed from "part" to selectedPart to get context from PickedPart */}
-                <strong>{selectedPart ? selectedPart.model : 'Please Select a Part'}</strong>
+                <strong>{data.selected ? data.selected.name : 'Please Select a Part'}</strong>
             </p>
-            <p>Price: ${part ? part.model : 0}</p>
+            <p>Price: ${data.selected ? data.selected.price : 0}</p>
         </Link>
     )
 }

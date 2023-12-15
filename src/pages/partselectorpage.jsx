@@ -1,18 +1,30 @@
 import { useLoaderData, useParams } from 'react-router-dom'
 import { PartList } from '../components/PartList'
-import { addPartToBuild } from '../utils/helpers'
-import { useContext } from 'react'
-import { AuthContext } from '../utils/context/auth-context'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { selectPart, slectPartFrom } from '../utils/buildSlice'
+import { useNavigate } from 'react-router-dom'
 
 export function PartsPage() {
-    //The below varible gets the user's data (e.g. email, name)
-    const { currentUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
-    const { partType } = useParams()
-    const parts = useLoaderData(partType)
+    const { partType, buildId } = useParams()
+    const {parts, type} = useLoaderData(partType)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(slectPartFrom(parts))
+    }, [dispatch, parts])
+
     return (
         <>
-            <PartList parts={parts}/>
+            <PartList
+                action={(part, type) => {
+                    dispatch(selectPart({part, type}))
+                    navigate(`/build/${buildId}`)
+                }}
+                partType={type}
+            />
         </>
     )
 }

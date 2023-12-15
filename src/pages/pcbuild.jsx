@@ -1,35 +1,15 @@
-import { collection, getDocs } from 'firebase/firestore'
+import { useSelector } from 'react-redux'
 import { PartSelector } from '../components/PartSelector'
-import { partSelectors } from '../utils/partSelectors'
-import { db } from '../utils/firebase'
-import { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
 
 const PCBuilder = () => {
-    const build = useLoaderData()
-
-    // const [builds, setBuilds] = useState();
-
-    useEffect(() => {
-    //     const buildReference = collection(db, 'user_builds')
-    //     const getData = async () => {
-    //         const data = await getDocs(buildReference)
-    //         const builds = data.docs.map((doc) => ({
-    //             id: doc.id,
-    //             ...doc.data(),
-    //         }))
-    //         setBuilds(builds)
-    //     }
-    //     getData()
-    console.log(build)
-    }, [])
+    const build = useSelector((state) => state.build)
 
     return (
         <div className="overflow-x-auto bg-base-100">
             <ul className="flex flex-col">
-                {partSelectors.map((selector) => (
-                    <li key={selector.name} className="hover:bg-slate-200 border-y p-2">
-                        <PartSelector selector={selector} />
+                {build.parts.map((selector) => (
+                    <li key={selector.label} className="hover:bg-slate-200 border-y p-2 py-6">
+                        <PartSelector data={selector} />
                     </li>
                 ))}
             </ul>

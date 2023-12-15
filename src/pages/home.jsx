@@ -2,16 +2,18 @@ import { useNavigate } from 'react-router-dom'
 import HeroLightPage from '../public/HeroLightPage.png'
 import { uid } from 'uid'
 import { useEffect, useState } from 'react'
-import { doc, setDoc } from 'firebase/firestore'
-import { db } from '../utils/firebase'
-import { createBuild } from '../utils/helpers'
+// import { doc, setDoc } from 'firebase/firestore'
+// import { db } from '../utils/firebase'
+// import { createBuild } from '../utils/helpers'
+import { useContext } from 'react'
+import { AuthContext } from '../utils/context/auth-context'
 
 export default function Home() {
+    const { currentUser } =  useContext(AuthContext)
     const navigate = useNavigate()
 
-    const handleButtonClick = async (userID) => {
-        const buildId = await createBuild(uid(16), userID)
-        navigate(`/pcbuild/:${buildId}`)
+    const handleButtonClick = async () => {
+        navigate(`/build/${uid(16)}/${currentUser ? currentUser.id : ''}`)
     }
 
     const [userID, setUserID] = useState()
