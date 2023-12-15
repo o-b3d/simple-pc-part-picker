@@ -5,7 +5,7 @@ export default function About() {
                 <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                     <div class="md:5/12 lg:w-5/12">
                         <img
-                            src="https://images.unsplash.com/photo-1612833603922-5e9b5f8b9b0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGV2ZWxvcG1lbnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+                            src="/src/public/AboutUsPhoto.png"
                             alt="image"
                             loading="lazy"
                             width=""
@@ -13,14 +13,19 @@ export default function About() {
                         />
                     </div>
                     <div class="md:7/12 lg:w-6/12">
-                        <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
-                            About Us Page
-                        </h2>
+                        <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">About Us</h2>
                         <p class="mt-6 text-gray-600">
-                            First Paragraph
-                        </p>
-                        <p class="mt-4 text-gray-600">
-                            Second Paragraph
+                            Welcome to Simple PC Part Picker, your trustworthy companion in the
+                            exhilarating world of custom PC building! Born from a passion for
+                            technology and a commitment to accessibility, our website is designed to
+                            simplify the complex process of selecting the perfect components for
+                            your dream PC. Whether you're a seasoned builder or a newcomer to the PC
+                            world, our user-friendly interface and comprehensive database cater to
+                            all levels of expertise. Founded by a team of tech enthusiasts and
+                            professional system builders, we share your excitement for the latest
+                            hardware trends and the satisfaction of a well-assembled rig. Our
+                            mission is to demystify the PC building process, making it more
+                            accessible and enjoyable for everyone.
                         </p>
                     </div>
                 </div>
