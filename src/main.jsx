@@ -14,7 +14,7 @@ import Private from './private.jsx'
 import { Login } from './pages/login.jsx'
 import PCBuilder from './pages/pcbuild.jsx'
 import { buildLoader } from './utils/helpers.js'
-import { Provider } from '/react-redux'
+import { Provider } from 'react-redux'
 import store from './utils/store.js'
 
 const withAuthProvider = (Component, requireAuth = false) => {
