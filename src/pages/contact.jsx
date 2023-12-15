@@ -1,6 +1,6 @@
 export default function ContactUs() {
     return (
-        <div className="flex items-center justify-center p-12">
+        <div className="flex items-center justify-center p-12 pb-36">
             <div className="mx-auto w-full max-w-[550px]">
                 <form action="" method="POST">
                     <div className="mb-5">

@@ -1,9 +1,9 @@
 export default function About() {
     return (
-        <div class="py-16 bg-white">
-            <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                    <div class="md:5/12 lg:w-5/12">
+        <div className="py-16 pb-56 bg-white">
+            <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                    <div className="md:5/12 lg:w-5/12">
                         <img
                             src="/src/public/AboutUsPhoto.png"
                             alt="image"
@@ -12,9 +12,9 @@ export default function About() {
                             height=""
                         />
                     </div>
-                    <div class="md:7/12 lg:w-6/12">
-                        <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">About Us</h2>
-                        <p class="mt-6 text-gray-600">
+                    <div className="md:7/12 lg:w-6/12">
+                        <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">About Us</h2>
+                        <p className="mt-6 text-gray-600">
                             Welcome to Simple PC Part Picker, your trustworthy companion in the
                             exhilarating world of custom PC building! Born from a passion for
                             technology and a commitment to accessibility, our website is designed to
