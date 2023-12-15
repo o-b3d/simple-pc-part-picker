@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '/@reduxjs/toolkit'
 import buildReducer from './buildSlice'
 export default configureStore({
-  reducer: {
-    build: buildReducer,
-  },
+    reducer: {
+        build: buildReducer,
+    },
 })
