@@ -1,10 +1,8 @@
-import { PickedPartContext } from './PickedPartContext'
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-export function PartList({ parts, action }) {
-    const navigate = useNavigate()
-    const { setSelectedPart } = useContext(PickedPartContext)
+export function PartList({ action, partType }) {
+    const build = useSelector((state) => state.build)
+
     return (
         <div className="overflow-x-auto">
             <table className="table">
@@ -17,8 +15,8 @@ export function PartList({ parts, action }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {parts.map((part) => (
-                        <tr key={part.partNumber}>
+                    {build.slectPartFrom.map((part, index) => (
+                        <tr key={part.name + index}>
                             <td>
                                 <div className="flex items-center gap-3">
                                     <div className="mask w-12 h-12">
@@ -32,10 +30,7 @@ export function PartList({ parts, action }) {
                             <td>
                                 <button
                                     className="btn btn-ghost"
-                                    onClick={() => {
-                                        setSelectedPart(part)
-                                        navigate('/PCBuild')
-                                    }}
+                                    onClick={() => action(part, partType)}
                                 >
                                     Add to Build
                                 </button>

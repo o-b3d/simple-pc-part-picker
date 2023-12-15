@@ -57,13 +57,13 @@ export const createBuild = async (buildID, userID) => {
 }
 
 export const buildLoader = async ({ params }) => {
-    console.log(params)
     const docRef = doc(db, 'user_builds', params.buildId)
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
         return docSnap.data()
     } else {
+        console.log('build does not exist')
         return []
     }
 }
